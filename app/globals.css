@@ -2,4 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+.slide-img{
+  transition: translate 400ms ease-in-out;
+  flex-grow: 0;
+  flex-shrink: 0;
+  object-fit: cover;
+}
 
+.dotStyle{
+  transition: scale 400ms ease-in-out;
+}
+
+.dotStyle:hover{
+  scale: 1.2;
+}
+
+@keyframes squish {
+  50% {
+    scale: 1.4 0.6;
+  }
+}
+
+
+
+.tones{
+  background-color: rgb(3, 46, 3, 0.6)
+}
+
+.other_tones{
+  background-color: rgb(3, 46, 3, 0.4)
+}
