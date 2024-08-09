@@ -32,11 +32,11 @@ const CustomSlider: React.FC<CustomSliderProps> = ({
   // Change image every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % items.length);
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % items.length / imagesPerSlide);
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [items.length]);
+  }, [items.length, imagesPerSlide]);
 
   const goToSlide = (index: number) => {
     setCurrentIndex(index);
@@ -49,17 +49,20 @@ const CustomSlider: React.FC<CustomSliderProps> = ({
                 items.map((url, index) => (
             <Image src={items[currentIndex]} alt={`Slide ${index + 1}`}
             className={`slide-img ${slideImgClass} object-cover`}
-            style={{translate: `${-100 * currentIndex}%`}}
-            aria-hidden={currentIndex !== index}
-            key={index}
-            width={width}
-            height={height}
+            style={{
+                translate: `${-100 * currentIndex}%`,
+                width: `${100 / imagesPerSlide}%`, // Adjust image width based on imagesPerSlide
+              }}
+            aria-hidden={index < currentIndex * imagesPerSlide || index >= (currentIndex + 1) * imagesPerSlide}
+              key={index}
+              width={width}
+              height={height}
         />
           ))
         }
       </div>
       <div className={dotsContainerStyles}>
-        {items.map((_, index) => (
+        {Array.from({ length: Math.ceil(items.length / imagesPerSlide) }).map((_, index) => (
           <div
             key={index}
             onClick={() => goToSlide(index)}
