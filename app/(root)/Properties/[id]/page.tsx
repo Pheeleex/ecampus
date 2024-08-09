@@ -31,7 +31,7 @@ const page = async({params}: pageProps) => {
           height={775}
           slideContClass=' w-full h-full'
           slideImgClass='w-1/2 hfull'
-          largeCont='w-3/4 h-1/2'
+          largeCont='w-3/4 h-1/2 max-w-3/4'
           imagesPerSlide={2}
         />
 
