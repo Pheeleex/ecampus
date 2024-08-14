@@ -53,6 +53,7 @@ export const fetchProperties = async (): Promise<Property[]> => {
       let images: string[] = [];
       const imagePath = property.ImagePath || property.id;
       const imageListRef = ref(storage, `${imagePath}/`);
+      console.log(images)
 
       try {
         const imageList = await listAll(imageListRef);

@@ -1,7 +1,9 @@
 import CustomSlider from '@/app/Components/CustomSlider';
 import { fetchProperties } from '@/utils/firebase'
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
+import Slider from "react-slick";
 
 interface pageProps{
     params:{
@@ -12,6 +14,13 @@ interface pageProps{
 const page = async({params}: pageProps) => {
     const properties = await fetchProperties()
     const property = properties.find((prop) => prop.id === params.id);
+    var settings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+    };
 
   if (!property) {
     return <p>Property not found</p>;
@@ -34,7 +43,6 @@ const page = async({params}: pageProps) => {
           largeCont='w-3/4 h-1/2 max-w-3/4'
           imagesPerSlide={2}
         />
-
         <Link href="/products" className="btn">Back to Products</Link>
     
     </section>
