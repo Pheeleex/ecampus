@@ -33,7 +33,7 @@ const EditProperties: React.FC<EditPropertiesProps> = ({ onEdit }) => {
             <p>{prop.ProjectType}</p>
           </div>
           <span className="block mb-4 text-red-600">
-            {prop.Bedrooms} {prop.Bedrooms === 1 ? 'Bedroom' : 'Bedrooms'}
+            {prop.Bedroom} {prop.Bedroom === 1 ? 'Bedroom' : 'Bedrooms'}
           </span>
           <div className="flex justify-between">
             <button
