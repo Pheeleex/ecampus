@@ -15,9 +15,10 @@ const Properties = async () => {
         allProperties.map((property) => (
           <div 
             key={property.id} 
-            className="flex flex-col w-full sm:w-[90%] md:w-[48%] lg:w-[30%] border border-gray-400 rounded-lg overflow-hidden mb-8 h-auto"
+            className="flex flex-col w-full sm:w-[90%] md:w-[48%] lg:w-[30%] border border-gray-400 
+            rounded-lg overflow-hidden mb-8 h-auto"
           >
-            <div className="p-6 flex flex-col gap-2.5 h-full">
+            <div className="p-6 flex flex-col-reverse gap-2.5 h-full">
               <div className="flex justify-between items-center">
                 <h2 className="text-lg md:text-xl text-gray-700">{property.Location}</h2>
                 <h3 className="text-md md:text-lg">N{property.Rent}</h3>

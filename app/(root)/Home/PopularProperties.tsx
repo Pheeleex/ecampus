@@ -29,18 +29,18 @@ const PopularProperties = () => {
   };
 
   return (
-    <section className='p-8 mt-[16rem] flex flex-col'>
-       <h1 className='mt-12 font-bold text-3xl lg:text-4xl text-green-950'>Popular Properties</h1>
-      <div className=' flex flex-wrap justify-center gap-20 mt-[3rem]'>     
+    <section className='p-4 lg:p-12 flex flex-col items-center'>
+      <h1 className='mt-12 font-bold text-2xl lg:text-4xl text-green-950'>Popular Properties</h1>
+      <div className='flex flex-wrap justify-center gap-4 lg:gap-20 mt-8 lg:mt-[3rem] w-full'>
         {
           allProperties ? (
             allProperties.map((property) => (
-              <div key={property.id} className="flex flex-1 min-w-full md:min-w-1/2 lg:min-w-[45%] lg: max-w-[50%]
-                flex-col-reverse border border-gray-400 rounded-lg overflow-hidden mb-12 h-[28rem]">
-                <div className="p-8 flex flex-col gap-2.5 h-full">
+              <div key={property.id} className="flex flex-1 min-w-full sm:min-w-[80%] md:min-w-[45%] lg:min-w-[45%] xl:max-w-[30%]
+                flex-col-reverse border border-gray-400 rounded-lg overflow-hidden mb-8 lg:mb-12 h-[24rem] lg:h-[28rem]">
+                <div className="p-4 lg:p-8 flex flex-col gap-2.5 h-full">
                   <div className="flex justify-between items-center">
-                    <h2 className="text-xl text-gray-700">{property.Location}</h2>
-                    <h3 className="text-lg">N{property.Rent}</h3>
+                    <h2 className="text-lg lg:text-xl text-gray-700">{property.Location}</h2>
+                    <h3 className="text-md lg:text-lg">N{property.Rent}</h3>
                   </div>
                   <div className="flex justify-between items-center">
                     <p>{property.ProjectType}</p>
@@ -58,7 +58,7 @@ const PopularProperties = () => {
                     height={800}
                     slideContClass="w-full h-full overflow-hidden"
                     slideImgClass="w-full h-full object-cover bg-red"
-                    largeCont="w=full h-full"
+                    largeCont="w-full h-full"
                     imagesPerSlide={1}
                   />
                 ) : (
@@ -71,7 +71,7 @@ const PopularProperties = () => {
           )
         }
       </div>
-      <div className='flex items-center justify-center'>
+      <div className='flex items-center justify-center mt-8'>
         <button 
           onClick={handleViewAllProperties}
           className='p-2 border-black border-2 bg-transparent'
