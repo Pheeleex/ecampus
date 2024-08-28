@@ -13,7 +13,7 @@ import { Property } from '@/utils/types';
 interface PropertyFormValues {
   Rent: number;
   ProjectType: string;
-  Bedrooms: number;
+  Bedroom: number;
   Electricity: number
   Water: boolean
   Location: string;
@@ -52,7 +52,7 @@ const Page: React.FC = () => {
       'Rent',
       'ProjectType',
       'Location',
-      'Bedrooms',
+      'Bedroom',
       'About',
       'Electricity',
       'Water',
@@ -200,7 +200,7 @@ for (const [key, value] of Object.entries(fieldsToUpdate)) {
                   <input
                     type="radio"
                     value={option}
-                    {...register('Bedrooms')}
+                    {...register('Bedroom')}
                     className="mr-2"
                   />
                   {option}
