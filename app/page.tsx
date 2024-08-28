@@ -1,4 +1,5 @@
-import HomePage from "./(root)/Home";
+import HomePage from "./(root)/Home/Index";
+
 
 export default function Home() {
   return (
